@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d10">
+  <meta name="description" content="NutRadar is a free, open-source 3D Wi-Fi sensing visualizer. Explore the demo, replay recordings, or connect compatible sensors.">
+  <title>NutRadar · Spatial intelligence</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <svg class="icon-defs" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><defs>
+    <symbol id="i-radar" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9M12 7a5 5 0 1 0 5 5M12 12l8-8"/><circle cx="12" cy="12" r="1.3"/><circle cx="17" cy="7" r="1"/></symbol>
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1.4"/><rect x="14" y="3" width="7" height="7" rx="1.4"/><rect x="3" y="14" width="7" height="7" rx="1.4"/><rect x="14" y="14" width="7" height="7" rx="1.4"/></symbol>
+    <symbol id="i-record" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4m6-4v4M9 18v4m6-4v4M2 9h4m-4 6h4m12-6h4m-4 6h4"/><path d="M10 10h4v4h-4z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 19 19 5M5 5h14v14"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M9 19c-4 1-4-2-6-2m12 5v-4a3.5 3.5 0 0 0-1-3c3.3-.4 6.7-1.6 6.7-7A5.5 5.5 0 0 0 19 4a5 5 0 0 0-.1-3S17.6.6 15 2a13 13 0 0 0-6 0C6.4.6 5.1 1 5.1 1A5 5 0 0 0 5 4a5.5 5.5 0 0 0-1.7 4c0 5.4 3.4 6.6 6.7 7a3.5 3.5 0 0 0-1 3v4"/></symbol>
+    <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M2 8a16 16 0 0 1 20 0M5 12a11 11 0 0 1 14 0m-11 4a6 6 0 0 1 8 0"/><circle cx="12" cy="20" r="1"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24"><path d="m2 12 4 0 3-8 6 16 3-8h4"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 4 12 8-12 8z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6m0-10v1"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 7a9 9 0 1 0 1 8M20 2v6h-6"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6"/></symbol>
+  </defs></svg>
+  <a class="skip-link" href="#main">Skip to radar</a>
+  <aside class="sidebar">
+    <a class="brand" href="./" aria-label="NutRadar home"><span class="brand-mark"><svg><use href="#i-radar"/></svg></span><span>NutRadar<span class="brand-dot">.</span></span></a>
+    <div class="workspace-label">WORKSPACE <span>01</span></div>
+    <nav aria-label="Workspace">
+      <button class="nav-item active" id="nav-overview"><svg><use href="#i-grid"/></svg><span>Overview</span><span class="nav-active-dot"></span></button>
+      <button class="nav-item" id="nav-recordings"><svg><use href="#i-record"/></svg><span>Recordings</span></button>
+      <button class="nav-item" id="nav-hardware"><svg><use href="#i-chip"/></svg><span>Hardware setup</span></button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="local-card"><span class="tiny-orbit"></span><strong>Your data stays yours.</strong><p>Runs in your browser.<br>No account. No cloud fees.</p><span class="local-label">LOCAL PROCESSING <span>↗</span></span></div>
+      <a class="source-link" href="https://github.com/NutcrackerPro/NutRadar" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg> View on GitHub <svg><use href="#i-arrow"/></svg></a>
+      <div class="version"><span class="status-dot"></span> NUTRADAR <span>v1.0.0</span></div>
+    </div>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><div class="breadcrumb">Workspace <span>/</span> <strong>Overview</strong></div><div class="topbar-right"><span class="open-source">OPEN SOURCE</span><span class="top-separator"></span><span class="clock" id="clock">00:00:00</span><span class="avatar">N</span></div></header>
+    <main id="main">
+      <section class="page-heading"><div><div class="eyebrow">SPATIAL INTELLIGENCE, OPEN TO EVERYONE</div><h1>Spatial overview<span>.</span></h1><p>Read the room. Explore Wi-Fi in three dimensions.</p></div><button class="button primary" id="connect-button"><svg><use href="#i-wifi"/></svg> Connect sensor <span>↗</span></button></section>
+      <div class="demo-banner"><div><span class="status-dot"></span><strong id="mode-label">Demo mode</strong><span id="mode-description">Synthetic signals. Real possibilities. No hardware connected.</span></div><button class="text-button" id="about-button">How it works <span>↗</span></button></div>
+      <section class="stats" aria-label="Session metrics">
+        <div class="stat"><div class="stat-top">Targets in view<svg><use href="#i-user"/></svg></div><div class="stat-value" id="target-count">03<span>targets</span></div><div class="stat-foot"><span class="mint-dot"></span><span id="target-caption">Simulated room occupancy</span></div></div>
+        <div class="stat"><div class="stat-top">Sensor nodes<svg><use href="#i-chip"/></svg></div><div class="stat-value" id="node-count">04<span>nodes</span></div><div class="stat-foot" id="node-caption">Virtual mesh · 12 × 10 m</div></div>
+        <div class="stat"><div class="stat-top">Signal strength<svg><use href="#i-wifi"/></svg></div><div class="stat-value" id="signal-strength">−48<span>dBm</span></div><div class="stat-foot" id="signal-caption">Synthetic RSSI</div></div>
+        <div class="stat"><div class="stat-top">Stream rate<svg><use href="#i-wave"/></svg></div><div class="stat-value" id="frame-rate">30<span>Hz</span></div><div class="stat-foot" id="rate-caption">Simulation output</div></div>
+      </section>
+      <div class="primary-grid">
+        <section class="panel radar-panel" aria-label="Interactive 3D radar">
+          <div class="panel-heading"><div class="panel-title"><span class="panel-square"></span><h2>Spatial radar</h2><span class="pill" id="scene-pill">SIMULATED</span></div><div class="view-switch" role="group" aria-label="Camera view"><button class="selected" data-view="perspective" aria-pressed="true">3D</button><button data-view="top" aria-pressed="false">Top</button><button data-view="front" aria-pressed="false">Front</button></div></div>
+          <div class="radar-stage" id="radar-stage"><div class="stage-corner top-left"><span class="status-dot"></span><span id="stage-status">DEMO STREAM</span><small id="stage-subtitle">ROOM 01 · 120 m²</small></div><div class="stage-corner top-right">Y ↑<br><small>METERS</small></div><div class="scene-container" id="scene-container"></div><div class="stage-corner bottom-left"><div class="legend"><span class="legend-target"></span> Target <span class="legend-node"></span> Sensor</div></div><div class="stage-corner bottom-right">1 m <span class="scale-line"></span></div><div id="empty-state" class="empty-state" hidden><strong>No spatial targets</strong><span id="empty-message">The room is clear.</span></div></div>
+          <div class="avatar-note">ILLUSTRATIVE AVATARS · NOT MEASURED BODY SHAPES</div>
+          <div class="radar-footer"><span class="mouse-hint">↔ <span>Drag to orbit</span><span class="hint-divider">·</span><span>Scroll to zoom</span></span><div><button class="icon-button" id="reset-view" aria-label="Reset camera view"><svg><use href="#i-refresh"/></svg></button><button class="icon-button" id="pause-button" aria-label="Pause playback"><svg><use href="#i-pause"/></svg></button><button class="record-button" id="record-button"><span class="record-dot"></span><span id="record-text">Record</span></button></div></div>
+          <div class="replay-bar" id="replay-bar" hidden><label for="replay-position">Playback</label><input type="range" id="replay-position" min="0" max="1000" value="0"><span id="replay-time">0:00 / 0:00</span></div>
+        </section>
+        <aside class="panel controls-panel"><div class="panel-heading"><h2>Scene controls</h2><span class="control-icon">☷</span></div><div class="control-body">
+          <label class="field-label" for="scenario">DEMO SCENARIO</label><select id="scenario"><option value="occupancy">Room occupancy</option><option value="single">Single target</option><option value="empty">Empty room</option></select><p class="field-help" id="scenario-help">Three moving targets in a virtual room.</p>
+          <div class="control-group"><label class="range-label" for="speed">Playback speed <output id="speed-value">1×</output></label><input type="range" id="speed" min="0.25" max="2" value="1" step="0.25"><div class="range-ends"><span>0.25×</span><span>2×</span></div></div>
+          <div class="control-group layers"><span class="field-label">VISUALIZATION LAYERS</span><label>Point cloud <span class="fixed-layer">ON</span></label><label for="layer-trails">Motion trails<input class="switch" id="layer-trails" type="checkbox" checked></label><label for="layer-sweep">Radar sweep<input class="switch" id="layer-sweep" type="checkbox" checked></label><label for="layer-heatmap">Density field<input class="switch" id="layer-heatmap" type="checkbox" checked></label><label for="layer-grid">Spatial grid<input class="switch" id="layer-grid" type="checkbox" checked></label></div>
+          <div class="selection-card"><div class="field-label">TARGET INSPECTOR <span id="selection-indicator">01</span></div><strong id="selected-name">Target 01 <span class="tracking-badge">SIMULATED</span></strong><div class="coordinate-row"><span>X <b id="selected-x">—</b></span><span>Y <b id="selected-y">—</b></span><span>Z <b id="selected-z">—</b></span></div><div class="confidence-row"><span id="confidence-label">Synthetic confidence</span><strong id="selected-confidence">—</strong></div><div class="confidence-track"><div id="confidence-bar"></div></div></div>
+        </div></aside>
+      </div>
+      <div class="secondary-grid">
+        <section class="panel signal-panel"><div class="panel-heading"><div class="panel-title"><h2 id="signal-chart-title">Signal amplitude</h2><span class="muted-label" id="signal-type">SYNTHETIC CSI</span></div><div class="signal-key"><span></span> <span id="signal-series-label">Virtual node 01</span></div></div><div class="signal-chart"><div class="chart-labels"><span>1.0</span><span>0.5</span><span>0.0</span></div><canvas id="signal-canvas" aria-label="Relative signal amplitude sample history" role="img"></canvas></div><div class="chart-footer"><span id="signal-axis-label">RELATIVE AMPLITUDE</span><span>LAST 80 SAMPLES → NEWEST</span></div></section>
+        <section class="panel targets-panel"><div class="panel-heading"><div class="panel-title"><h2>Tracked targets</h2><span class="count-badge" id="table-count">3</span></div><span class="muted-label">METERS · Y UP</span></div><div class="table-scroll"><table><thead><tr><th>TARGET</th><th>POSITION (X, Z)</th><th>CONFIDENCE</th></tr></thead><tbody id="target-table"></tbody></table></div><div id="table-empty" class="table-empty" hidden>No tracks in this frame.</div></section>
+      </div>
+      <footer class="page-footer"><span><span class="status-dot"></span> <span id="footer-status">All processing happens on your device</span></span><span>Free to explore. Open to build. <a href="https://github.com/NutcrackerPro/NutRadar" target="_blank" rel="noopener">MIT licensed ↗</a></span></footer>
+    </main>
+  </div>
+  <dialog id="source-dialog" aria-labelledby="source-title"><div class="dialog-top"><span class="eyebrow">BRING YOUR OWN SIGNAL</span><button class="icon-button close-dialog" aria-label="Close"><svg><use href="#i-close"/></svg></button></div><h2 id="source-title">Connect a data source<span>.</span></h2><p>Monitor your laptop’s real Wi-Fi signal through the local reader. Spatial sensing requires additional hardware.</p><div class="source-options"><button id="laptop-setup" class="source-option"><svg><use href="#i-wifi"/></svg><span><strong>My laptop’s Wi-Fi</strong><small>Real signal strength · macOS / Linux · no extra sensor</small></span><span>↗</span></button><button id="serial-connect" class="source-option"><svg><use href="#i-chip"/></svg><span><strong>USB sensor</strong><small>Web Serial · NutRadar JSON firmware · 115200 baud</small></span><span>↗</span></button><button id="bridge-connect" class="source-option"><svg><use href="#i-wifi"/></svg><span><strong>Local bridge</strong><small>Run tools/bridge.py and open http://127.0.0.1:8765</small></span><span>↗</span></button><button id="source-import" class="source-option"><svg><use href="#i-download"/></svg><span><strong>Replay a recording</strong><small>Import NutRadar JSON or newline-delimited frames</small></span><span>↗</span></button></div><div class="laptop-setup" id="laptop-instructions" hidden><strong>Run the local reader</strong><p>Download the project from GitHub. In its folder, start these in separate terminals:</p><code>python3 tools/bridge.py</code><code>python3 tools/wifi_source.py</code><p>Open <a href="http://127.0.0.1:8765" target="_blank" rel="noopener">http://127.0.0.1:8765 ↗</a>, then choose Connect sensor → Local bridge. macOS needs Apple’s Swift compiler; Linux needs a Wi-Fi driver reporting dBm. Phone browsers and Windows are unsupported.</p><p>This measures your connected Wi-Fi signal. It does not detect people, estimate distance, or create 3D positions.</p></div><div class="dialog-note"><svg><use href="#i-info"/></svg><span>A website cannot read your laptop’s Wi-Fi radio directly. The local reader measures signal strength; raw CSI needs compatible sensors. Real 3D targets require externally estimated coordinates.</span></div><div class="dialog-actions"><button class="button" id="demo-return">Use demo</button><a href="https://github.com/NutcrackerPro/NutRadar/blob/main/docs/HARDWARE.md" target="_blank" rel="noopener">Connection guide ↗</a></div><p class="inline-error" id="source-error" role="status"></p></dialog>
+  <dialog id="about-dialog" aria-labelledby="about-title"><div class="dialog-top"><span class="eyebrow">THE SIGNAL, EXPLAINED</span><button class="icon-button close-dialog" aria-label="Close"><svg><use href="#i-close"/></svg></button></div><h2 id="about-title">A new view of Wi-Fi<span>.</span></h2><p>Inspired by RuView, NutRadar is an open-source 3D interface for exploring Wi-Fi sensing data.</p><div class="steps"><div><span>01</span><div><strong>Explore immediately</strong><p>The demo generates synthetic tracks, CSI-like waves, and virtual nodes. It does not scan your surroundings.</p></div></div><div><span>02</span><div><strong>Connect your hardware</strong><p>Compatible firmware can stream raw CSI over USB or through the free local bridge. Hardware is purchased separately.</p></div></div><div><span>03</span><div><strong>Bring estimated positions</strong><p>Visualize 3D coordinates from your own calibrated localization pipeline. NutRadar itself does not reconstruct people from raw CSI.</p></div></div></div><div class="dialog-actions"><button class="button primary close-dialog">Got it</button><a href="https://github.com/ruvnet/RuView" target="_blank" rel="noopener">Explore RuView ↗</a></div></dialog>
+  <dialog id="recordings-dialog" aria-labelledby="recordings-title"><div class="dialog-top"><span class="eyebrow">CAPTURE. REPLAY. EXPLORE.</span><button class="icon-button close-dialog" aria-label="Close"><svg><use href="#i-close"/></svg></button></div><h2 id="recordings-title">Your recordings<span>.</span></h2><p>Press Record to capture incoming frames. Stop recording to download a JSON file. Files stay on your device.</p><div class="recording-summary" id="recording-summary">No recording in this session yet.</div><div class="dialog-actions"><button class="button primary" id="import-button"><svg><use href="#i-download"/></svg> Import recording</button><button class="button" id="export-last" disabled>Export last session</button></div><p class="field-help">JSON / NDJSON · up to 20 MB · 18,000 frames. Recordings are held in memory until you leave this page.</p></dialog>
+  <input type="file" id="file-input" accept=".json,.jsonl,.ndjson,application/json" hidden>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><div class="noscript">Enable JavaScript to run NutRadar’s local 3D visualizer.</div></noscript>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
