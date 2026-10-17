@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "kind": "tracks",
+  "source": "simulation",
+  "timestamp": 1700000000000,
+  "coordinateSystem": "room-meters-y-up",
+  "tracks": [
+    {
+      "id": "Example target",
+      "x": 0.0,
+      "y": 0,
+      "z": 2.0,
+      "confidence": 0.9
+    }
+  ],
+  "nodes": [
+    {
+      "id": "Example node",
+      "x": -4,
+      "y": 1,
+      "z": -3
+    }
+  ],
+  "rssiDbm": -50
+}
