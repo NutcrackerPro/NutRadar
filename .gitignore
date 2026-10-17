@@ -1,0 +1,12 @@
+.DS_Store
+Thumbs.db
+node_modules/
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+coverage/
+playwright-report/
+test-results/
+.pages-stage/
+*.log
