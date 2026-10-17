@@ -1,0 +1,15 @@
+{
+  "name": "nutradar",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An open-source 3D Wi-Fi sensing dashboard for GitHub Pages.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "serve": "python3 -m http.server 8080"
+  }
+}
